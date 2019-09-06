@@ -1,0 +1,25 @@
+doctype html
+
+mixin side(char, player, port, imagePath, classes)
+  .third
+    .bar
+      p= char
+    .fill
+    .sub
+      p= player
+  .character
+    img(src=imagePath class=classes)
+
+html
+  head
+    link(type="text/css" rel="stylesheet" href="css/main.css")
+  body
+    #vs
+      .anime
+        p Vs.
+    #left.side
+      +side("Marth", "dude bro", "P1", "/img/chars/melee/classic_mode_renders/left/Marth_3.png", "melee-cmr-left")
+    #right.side
+      +side("Fox", "Player 2", "P2", "/img/chars/melee/classic_mode_renders/right/Fox_1.png", "melee-cmr-right")
+    script(src="js/anime.min.js")
+    script(src="js/main.js")
